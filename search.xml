@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[hexo常见注意事项]]></title>
+    <url>%2F2019%2F05%2F14%2Fhexo%E5%B8%B8%E8%A7%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%2F</url>
+    <content type="text"><![CDATA[中文输入的！与英文输入的!很相像，常见于图片引入-代码： 12![雏田](https://wx3.sinaimg.cn/mw1024/007HBEWwly1g1rubx8bw6j30jg0pxjvg.jpg)！[樱](https://wx1.sinaimg.cn/mw1024/007HBEWwly1g1ruc3di69j30jg0px41m.jpg) -效果：！樱 待续未完...]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>要点</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F05%2F14%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>技巧</tag>
+        <tag>经验</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo结构图解]]></title>
+    <url>%2F2019%2F04%2F10%2Fhexo%E7%BB%93%E6%9E%84%E5%9B%BE%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[hexo结构1 hexo结构2]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>图解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用hexo+github搭建个人博客与文件备份]]></title>
+    <url>%2F2019%2F04%2F05%2F%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%8E%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD%2F</url>
+    <content type="text"><![CDATA[hexo博客搭建hexo博客搭建参考1 关于Hexo6.0搭建个人博客基础编 关于Hexo6.0搭建个人博客进阶篇 关于Hexo6.0搭建个人博客高级篇 博客文章参考2 Hexo搭建博客教程 文件备份hexo文件备份参考 使用hexo+GitHub搭建的个人博客 文件备份 常用命令hexo编辑 hexo s 启动服务器。默认情况下，访问网址为： http://localhost:4000/ hexo clean 删除本地静态文件 可不执行 hexo g 生成本地静态文件 hexo d 将本地静态文件推送至github(可与hexo g同时使用，即hexo d -g) hexo n “XXX” 生成名为XXX的博文 hexo n page “XXX” 生成名为XXX的页面 修改在本地对博客修改（包括修改主题样式、发布新文章等）后 执行git add，git commit -m “提交文件”，git push origin Hexo来提交Hexo网站源文件； 执行hexo g -d 生成静态网页部署到github上；（每次发布重复这两步，它们之间没有严格的顺序） 恢复换电脑恢复博客 安装git、Nodejs和npm 使用克隆命令将仓库拷贝至本地 在文件夹内执行命令 npm install hexo-cli -g npm install npm install hexo-deployer-git]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>文件备份</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[图标变小方块]]></title>
+    <url>%2F2019%2F04%2F04%2F%E5%9B%BE%E6%A0%87%E5%8F%98%E5%B0%8F%E6%96%B9%E5%9D%97%2F</url>
+    <content type="text"><![CDATA[描述 本人为了加速博客的开启速度，所以安装hexo-service-worker、hexo-filter-optimize两个插件，在站点配置文件中配置代码（如下所示） 123456789101112131415161718192021222324252627282930313233# offline config passed to sw-precache.service_worker: maximumFileSizeToCacheInBytes: 5242880 staticFileGlobs: - public/**/*.&#123;js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2&#125; stripPrefix: public verbose: truefilter_optimize: enable: true # remove static resource query string # - like `?v=1.0.0` remove_query_string: true # remove the surrounding comments in each of the bundled files remove_comments: true css: enable: true # bundle loaded css file into the one bundle: true # use a script block to load css elements dynamically delivery: true # make specific css content inline into the html page # - only support the full path # - default is [&apos;css/main.css&apos;] inlines: excludes: js: # bundle loaded js file into the one bundle: true excludes: # set the priority of this plugin, # lower means it will be executed first, default is 10 priority: 12 侧边栏Font Awesome图标不显示，控制台显示lib目录下找不到font-awesome.min.css文件 ，相关代码如下： 1234&#123;% set font_awesome_uri = url_for(theme.vendors._internal + &apos;/font-awesome/css/font-awesome.min.css?v=4.6.2&apos;) %&#125;&#123;% if theme.vendors.fontawesome %&#125; &#123;% set font_awesome_uri = theme.vendors.fontawesome %&#125;&#123;% endif %&#125; 现象如图所示： 解决-找到next主题的配置文件，搜索关键词vendors找到fontawesome，启用即可。 123456# Internal version: 4.6.2 # See: https://fontawesome.com # Example: # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>坑</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown简要语法]]></title>
+    <url>%2F2019%2F03%2F29%2FMarkdown%E7%AE%80%E8%A6%81%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[Markdown简要用法粗斜体代码：123*斜体***粗体*****粗斜体*** 显示效果： 斜体 粗体 粗斜体标题 代码：123456# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题 显示效果： 注意:#号与标题间有空格 分隔符说明：一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。 代码：1234---- - - **** * * 显示效果(效果都一样)： 超链接行内式代码：1[威威的博客]（https://ailvv.com） 显示效果： 威威的博客 参考式代码：12[威威的博客][xx][xx]: https://ailvv.com（该语句可放在文章尾部,xx为数字） 显示效果： 威威的博客 简短的自动链接形式说明：Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用&lt;&gt;包起来， Markdown 就会自动把它转成链接。 代码：12&lt;https://ailvv.com&gt;&lt;iy1573147@163.c0m&gt; 显示效果： https://ailvv.com &#105;&#121;&#x31;&#53;&#x37;&#51;&#49;&#52;&#55;&#64;&#x31;&#x36;&#51;&#x2e;&#x63;&#x30;&#x6d; 列表无序列表说明：使用 *，+，- 表示无序列表。 代码：123456* 无序列表项1* 无序列表项2+ 无序列表项1+ 无序列表项2- 无序列表项1- 无序列表项2 显示效果： 无序列表项1 无序列表项2 无序列表项1 无序列表项2 无序列表项1 无序列表项2 有序列表有序列表则使用数字接着一个英文句点。 代码：1231. 有序列表项 一2. 有序列表项 二3. 有序列表项 三 显示效果： 有序列表项 一 有序列表项 二 有序列表项 三 定义型列表定义型列表由名词和解释组成。一行写上定义，紧跟一行写上解释。解释的写法:紧跟一个缩进(Tab) 代码：1234Markdown: 轻量级文本标记语言，可以转换成html，pdf等格式（左侧有一个可见的冒号和四个不可见的空格）代码块: 这是代码块的定义 显示效果：Markdown: 轻量级文本标记语言，可以转换成html，pdf等格式（左侧有一个可见的冒号和四个不可见的空格 代码块: 这是代码块的定义 列表缩进说明：列表项目标记通常是放在最左边，但也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符。 代码：12* 轻轻的我走了， 正如我轻轻的来； 我轻轻的招手， 作别西天的云彩。* 那河畔的金柳， 是夕阳中的新娘； 波光里的艳影， 在我的心头荡漾。 显示效果： 轻轻的我走了， 正如我轻轻的来； 我轻轻的招手， 作别西天的云彩。 那河畔的金柳， 是夕阳中的新娘； 波光里的艳影， 在我的心头荡漾。 引用说明：引用需要在被引用的文本前加上&gt;符号。 普通引用代码：123&gt;hahaha&gt;yyyyyyy&gt;yeyeyeye 显示效果： hahahayyyyyyyyeyeyeye 引用的多层嵌套代码：123&gt;hahaha&gt;&gt;yyyyyyy&gt;&gt;&gt;yeyeyeye 显示效果： hahaha yyyyyyy yeyeyeye 图片说明：图片的创建方式与超链接相似，和超链接一样，有两种写法，即行内式和参考式写法。语法中: Alt：当图片因某些原因不能显示，就用Alt文字来代替图片 Title：鼠标悬停与图片上时出现的文字 Alt 和 Title 都不是必须的，可省略。 行内式说明： ![图片Alt](图片地址 “图片Title”) 代码：1![美丽天空](https://wx1.sinaimg.cn/mw690/006CCgKCgy1g0uqgq5mmxj31400u0wj2.jpg &quot;美丽天空&quot;) 显示效果： 参考式说明：在文档要插入图片的地方写 ![图片Alt][标记]在文档的最后写上[标记]:图片地址 “Title” 代码：123![美丽天空][2][2]:https://wx1.sinaimg.cn/mw690/006CCgKCgy1g0uqgq5mmxj31400u0wj2.jpg &quot;美丽天空&quot; 显示效果： LaTeX 公式$表示行内公式：代码：1质能守恒方程可以用一个很简洁的方程式 $$E=mc^2$$ 来表达。 显示效果：质能守恒方程可以用一个很简洁的方程式 $$E=mc^2$$ 来表达。 $表示整行公式：代码：123456$$sum_&#123;i=1&#125;^n a_i=0$$$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2$$ 显示效果：$$sum_{i=1}^n a_i=0$$ $$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2$$ 注意：若选择Typora进行编辑博文，可选定文章部分内容后再选定左上角段落中的公式块即可生成公式 *更多公式使用方法可访问MathJax或数学公式 Hexo 默认是不支持LaTeX公式语法的，需要添加支持插件，可参考 hexo-math解决方案1 或 hexo-math解决方案2 流程图操作模块语法 start：开始 end:结束 opration:普通操作块 condition:判断块 subroutine:子任务块 inputoutput:输入输出块 代码：&#x60;&#x60;&#x60;flowst=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？ st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op&#x60;&#x60;&#x60; 显示效果：12345678st=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 注意:Hexo 默认是不支持流程图的 Markdown 语法的，需要添加支持：npm install –save hexo-filter-flowchart 表格说明： 绘制表格格式如下，| 控制分列，- 控制分行，: 控制对齐方式。 :—-为居左 :—-:或—–为居中 —-:为居右 代码：12345| Item | Value | Qty || :------- | --------: | :---: || Computer | 1600 USD | 5 || Phone | 12 USD | 12 || Pipe | 1 USD | 234 | 显示效果： Item Value Qty Computer 1600 USD 5 Phone 12 USD 12 Pipe 1 USD 234 代码说明： 代码分为行内代码和代码块 行内代码使用 &#x60;代码&#x60;标识，可嵌入文字中 代码块使用4个空格或&#x60;&#x60;&#x60;标识 注意： 缩进式代码插入前方须有空行 行内代码：说明：用&#x60;囊括内容 显示效果： scanf() 代码块：说明：用&#x60;&#x60;&#x60;囊括内容。 代码：&#x60; &#x60; &#x60; include&lt;stdio.h&gt; int main(void) { printf(“Hello world\n”); }&#x60; &#x60; &#x60; 显示效果:12345include &lt;stdio.h&gt;int main(void)&#123; printf(&quot;Hello world\n&quot;);&#125; 缩进式代码块：代码：&nbsp;&nbsp;&nbsp;&nbsp;include &lt;stdio.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;int main(void)&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;printf(“Hello world\n”);&nbsp;&nbsp;&nbsp;&nbsp;} 显示效果：include &lt;stdio.h&gt; int main(void) { printf(&quot;Hello world\n&quot;); } 注意：缩进 4 个空格或是 1 个制表符再写代码，一个代码区块会一直持续到没有缩进的那一行（或是文件结尾） HTML 原始码插入:说明：在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，剩下的 Markdown 都会帮你处理，例如： 代码：123456789101112131415&#123;% raw %&#125; &lt;table&gt; &lt;tr&gt; &lt;th rowspan=&quot;2&quot;&gt;值班人员&lt;/th&gt; &lt;th&gt;星期一&lt;/th&gt; &lt;th&gt;星期二&lt;/th&gt; &lt;th&gt;星期三&lt;/th&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;李强&lt;/td&gt; &lt;td&gt;张明&lt;/td&gt; &lt;td&gt;王平&lt;/td&gt; &lt;/tr&gt;&lt;/table&gt;&#123;% endraw %&#125; 显示效果： 值班人员 星期一 星期二 星期三 李强 张明 王平 工具推荐 在线编辑器 Evernote的失踪Markdown编辑器 Cmd Markdown 编辑阅读器 本地编辑器 Typora 感谢 距离 darryrzhong]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>技巧</tag>
+        <tag>经验</tag>
+      </tags>
+  </entry>
+</search>

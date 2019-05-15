@@ -1946,7 +1946,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e283e8;
+  background: #4501f6;
 }
 .feed-link,
 .chat {
@@ -3935,6 +3935,17 @@ p#div-border-top-purple {
 
           
           
+            <span id="/2019/05/15/访问外链图片出现403的解决方法/" class="leancloud_visitors" data-flag-title="访问微博外链图片出现403的解决方法">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
 
           
 
@@ -4128,6 +4139,17 @@ p#div-border-top-purple {
           
 
           
+          
+            <span id="/2019/05/14/hexo常见注意事项/" class="leancloud_visitors" data-flag-title="hexo常见注意事项">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
@@ -4325,6 +4347,17 @@ p#div-border-top-purple {
 
           
           
+            <span id="/2019/05/14/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
 
           
 
@@ -4508,6 +4541,17 @@ p#div-border-top-purple {
           
 
           
+          
+            <span id="/2019/04/10/hexo结构图解/" class="leancloud_visitors" data-flag-title="hexo结构图解">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
@@ -4701,6 +4745,17 @@ p#div-border-top-purple {
           
 
           
+          
+            <span id="/2019/04/05/使用hexo-github搭建个人博客与文件备份/" class="leancloud_visitors" data-flag-title="使用hexo+github搭建个人博客与文件备份">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
@@ -4898,6 +4953,17 @@ p#div-border-top-purple {
 
           
           
+            <span id="/2019/04/04/图标变小方块/" class="leancloud_visitors" data-flag-title="图标变小方块">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
 
           
 
@@ -5091,6 +5157,17 @@ p#div-border-top-purple {
           
 
           
+          
+            <span id="/2019/03/29/Markdown简要语法/" class="leancloud_visitors" data-flag-title="Markdown简要语法">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
@@ -5531,6 +5608,10 @@ p#div-border-top-purple {
 
 
   
+  
+  
+
+
 
   
 
@@ -5935,6 +6016,67 @@ p#div-border-top-purple {
       if (shouldDismissSearchPopup) {
         onPopupClose();
       }
+    });;function showTime(Counter) {
+      var entries = [];
+      var $visitors = $('.leancloud_visitors');
+
+      $visitors.each(function() {
+        entries.push( $(this).attr('id').trim() );
+      });
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+        .done(function({ results }) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'iLD8BHRIdebizFxEJbRdof3v-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'iLD8BHRIdebizFxEJbRdof3v-gzGzoHsz',
+                'X-LC-Key': '1gGSsN3iAlQlQyOH5xbgfm68',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            if ($('.post-title-link').length >= 1) {
+              showTime(Counter);
+            }
+          
+        });
     });;InstantClick.init();;POWERMODE.colorful = true;
     POWERMODE.shake = false;
     document.body.addEventListener('input', POWERMODE);;var OriginTitile = document.title;

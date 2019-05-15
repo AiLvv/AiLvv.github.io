@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[访问外链图片出现403的解决方法]]></title>
     <url>%2F2019%2F05%2F15%2F%E8%AE%BF%E9%97%AE%E5%A4%96%E9%93%BE%E5%9B%BE%E7%89%87%E5%87%BA%E7%8E%B0403%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[问题 在网页加载外链图片时,由于访问过多导致外链服务器认定为恶意访问（如爬虫爬取图片）从而拒绝该访问请求 解决方法（使用no-referrer方案） 在&lt;head&gt;&lt;/head&gt;里加入&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt; hexo（next主题）可在themes\next\layout文件夹下的_layout.swig文件里的&lt;head&gt;&lt;/head&gt;添加,如下图所示]]></content>
+    <content type="text"><![CDATA[问题 在网页加载外链图片时,由于访问过多导致外链服务器认定为恶意访问（如爬虫爬取图片）从而拒绝该访问请求 解决方法（使用no-referrer方案） 在&lt;head&gt;&lt;/head&gt;里加入&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt; hexo（next主题）可在themes\next\layout文件夹下的_layout.swig文件里的&lt;head&gt;&lt;/head&gt;添加,如下图所示 注意：不是所有浏览器都支持这个标签，比如IE，国内有些所谓双核浏览器，在极速或者高速模式下也正常显示]]></content>
       <categories>
         <category>页面</category>
       </categories>

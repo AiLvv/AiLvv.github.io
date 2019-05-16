@@ -1946,7 +1946,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #269d6c;
+  background: #e5da93;
 }
 .feed-link,
 .chat {
@@ -3598,7 +3598,7 @@ p#div-border-top-purple {
 
 
 
-
+  <meta name="referrer" content="no-referrer">
   
 <script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('https://fonts.loli.net/css?family=Noto%20Serif%20SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext');loadCss('//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css');</script><noscript><link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto%20Serif%20SC:300,300italic,400,400italic,700,700italic&amp;subset=latin,latin-ext"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"></noscript></head>
 
@@ -3891,12 +3891,24 @@ p#div-border-top-purple {
                 
               
 
-              <time title="创建时间：2019-05-15 08:50:46 / 修改时间：10:27:52" itemprop="dateCreated datePublished" datetime="2019-05-15T08:50:46+08:00">2019-05-15</time>
+              <time title="创建时间：2019-05-15 08:50:46" itemprop="dateCreated datePublished" datetime="2019-05-15T08:50:46+08:00">2019-05-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-16 15:12:47" itemprop="dateModified" datetime="2019-05-16T15:12:47+08:00">2019-05-16</time>
               
             
           </span>
@@ -3975,7 +3987,10 @@ p#div-border-top-purple {
         
           <hr>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
-<li>在网页加载微博外链图片时,由于访问过多导致外链服务器认定为恶意访问（如爬虫爬取图片）从而拒绝该访问请求
+<li>在网页加载微博外链图片时,由于访问过多导致外链服务器认定为恶意访问（如爬虫爬取图片）从而拒绝该访问请求  <h2 id="解决方法1（使用no-referrer方案，推荐）"><a href="#解决方法1（使用no-referrer方案，推荐）" class="headerlink" title="解决方法1（使用no-referrer方案，推荐）"></a>解决方法1（使用no-referrer方案，推荐）</h2></li>
+<li>在<code>&lt;head&gt;&lt;/head&gt;</code>里加入<code>&lt;meta name="referrer" content="no-referrer"/&gt;</code>  </li>
+<li>hexo（next主题）可在themes\next\layout文件夹下的_layout.swig文件里的<code>&lt;head&gt;&lt;/head&gt;</code>添加,如下图所示</li>
+<li><img src="https://wx2.sinaimg.cn/mw690/007HBEWwly1g31qcp7eyfj30kn04jdft.jpg" alt="添加meta">
           <!--noindex-->
           
             <div class="post-button text-center">

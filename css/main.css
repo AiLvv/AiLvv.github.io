@@ -1797,7 +1797,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #ffffb0;
 }
 .feed-link,
 .chat {
@@ -3075,7 +3075,7 @@ body {
 .footer-inner div,
 .footer-inner span,
 .footer-inner i {
-  color: #f61e1e;
+  color: #fffafa;
 }
 .site-subtitle {
   font-size: 15px;

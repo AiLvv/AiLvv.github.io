@@ -115,12 +115,12 @@
 <meta property="og:site_name" content="AiLvv">
 <meta property="og:description" content="描述 本人为了加速博客的开启速度，所以安装hexo-service-worker、hexo-filter-optimize两个插件，在站点配置文件中配置代码（如下所示）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://wx3.sinaimg.cn/mw1024/007HBEWwly1g1rs8nbwtxj306t08owei.jpg">
-<meta property="og:updated_time" content="2019-04-10T02:21:32.981Z">
+<meta property="og:image" content="https://upload.cc/i1/2019/06/22/yQU3iA.jpg">
+<meta property="og:updated_time" content="2019-06-22T13:57:07.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图标变小方块">
 <meta name="twitter:description" content="描述 本人为了加速博客的开启速度，所以安装hexo-service-worker、hexo-filter-optimize两个插件，在站点配置文件中配置代码（如下所示）">
-<meta name="twitter:image" content="https://wx3.sinaimg.cn/mw1024/007HBEWwly1g1rs8nbwtxj306t08owei.jpg">
+<meta name="twitter:image" content="https://upload.cc/i1/2019/06/22/yQU3iA.jpg">
 
 
 
@@ -1950,7 +1950,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #63fb2b;
+  background: #14ffff;
 }
 .feed-link,
 .chat {
@@ -3905,7 +3905,7 @@ p#div-border-top-purple {
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-10 10:21:32" itemprop="dateModified" datetime="2019-04-10T10:21:32+08:00">2019-04-10</time>
+                <time title="修改时间：2019-06-22 21:57:07" itemprop="dateModified" datetime="2019-06-22T21:57:07+08:00">2019-06-22</time>
               
             
           </span>
@@ -3990,7 +3990,7 @@ p#div-border-top-purple {
 <li><p>侧边栏Font Awesome图标不显示，控制台显示lib目录下找不到font-awesome.min.css文件 ，相关代码如下：</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">{% set font_awesome_uri = url_for(theme.vendors._internal + '/font-awesome/css/font-awesome.min.css?v=4.6.2') %}</span><br><span class="line">{% if theme.vendors.fontawesome %}</span><br><span class="line">  {% set font_awesome_uri = theme.vendors.fontawesome %}</span><br><span class="line">{% endif %}</span><br></pre></td></tr></tbody></table></figure>
 </li>
-<li><p>现象如图所示：<br><img src="https://wx3.sinaimg.cn/mw1024/007HBEWwly1g1rs8nbwtxj306t08owei.jpg" alt="图标小方块"></p>
+<li><p>现象如图所示：<br><img src="https://upload.cc/i1/2019/06/22/yQU3iA.jpg" alt="图标小方块"></p>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>-找到next主题的配置文件，搜索关键词vendors找到fontawesome，启用即可。</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Internal version: 4.6.2</span><br><span class="line">  # See: https://fontawesome.com</span><br><span class="line">  # Example:</span><br><span class="line">  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css</span><br><span class="line">  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css</span><br><span class="line">  fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css</span><br></pre></td></tr></tbody></table></figure>
 </li>
